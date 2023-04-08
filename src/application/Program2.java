@@ -23,6 +23,13 @@ public class Program2 {
         departments = departmentDao.findAll();
         departments.forEach(System.out::println);
 
+        System.out.println("\n=== TEST 3: seller insert ======");
+        dep = departmentDao.findById(6);
+        dep.setName("Novo Departamento");
+        departmentDao.update(dep);
+        departments = departmentDao.findAll();
+        departments.forEach(System.out::println);
+
 
 
     }
