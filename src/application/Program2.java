@@ -18,15 +18,20 @@ public class Program2 {
         departments.forEach(System.out::println);
 
         System.out.println("\n=== TEST 3: seller insert ======");
-        Department newDep = new Department(null, "Books");
+        Department newDep = new Department(null, "Smartphones");
         departmentDao.insert(newDep);
         departments = departmentDao.findAll();
         departments.forEach(System.out::println);
 
-        System.out.println("\n=== TEST 3: seller insert ======");
+        System.out.println("\n=== TEST 4: seller insert ======");
         dep = departmentDao.findById(6);
         dep.setName("Novo Departamento");
         departmentDao.update(dep);
+        departments = departmentDao.findAll();
+        departments.forEach(System.out::println);
+
+        System.out.println("\n=== TEST 4: seller insert ======");
+        departmentDao.deleteById(7);
         departments = departmentDao.findAll();
         departments.forEach(System.out::println);
 
