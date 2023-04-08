@@ -5,6 +5,7 @@ import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -17,11 +18,16 @@ public class Program {
 
         System.out.println("\n=== TEST 2: seller find by department ======");
         List<Seller> list = sellerDao.findByDepartment(new Department(2, null));
-        list.stream().forEach(System.out::println);
+        list.forEach(System.out::println);
 
         System.out.println("\n=== TEST 3: seller findAll ======");
         list = sellerDao.findAll();
-        list.stream().forEach(System.out::println);
+        list.forEach(System.out::println);
+
+        System.out.println("\n=== TEST 3: seller findAll ======");
+        Seller seller1 = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, new Department(2, null));
+        sellerDao.insert(seller1);
+        System.out.println("Inserted! New id  = " + seller1.getId());
 
     }
 }
