@@ -17,5 +17,13 @@ public class Program2 {
         List<Department> departments = departmentDao.findAll();
         departments.forEach(System.out::println);
 
+        System.out.println("\n=== TEST 3: seller insert ======");
+        Department newDep = new Department(null, "Books");
+        departmentDao.insert(newDep);
+        departments = departmentDao.findAll();
+        departments.forEach(System.out::println);
+
+
+
     }
 }
